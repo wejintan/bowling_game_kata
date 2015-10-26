@@ -21,14 +21,24 @@ namespace bowling
             Assert.That(g.GetFinalScore(), Is.EqualTo(0));
         }
         [Test]
-        public void FirstBall()
+        public void FirstRound()
         {
             Game g = new Game();
             g.SetPins(5);
             g.SetPins(4);
             Assert.That(g.GetFinalScore(), Is.EqualTo(9));
         }
-
+        [Test]
+        public void TripleRound()
+        {
+            Game g = new Game();
+            g.SetPins(10);
+            g.SetPins(4);
+            g.SetPins(5);
+            g.SetPins(6);
+            g.SetPins(3);
+            Assert.That(g.GetFinalScore(), Is.EqualTo(37));
+        }
     }
 }
 
