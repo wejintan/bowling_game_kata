@@ -9,10 +9,11 @@ namespace bowling
     {
         int[] TempScore = new int[20];
         int index = 0;
+        int count = 0;
         int finscore = 0;
         public void SetPins(int p)
         {
-           
+         
                 TempScore[index] = p;
                 index += 1;
         }
@@ -27,10 +28,32 @@ namespace bowling
                        finscore += TempScore[k];
                        finscore += TempScore[k+1];
                        finscore += TempScore[k+2];
+                       count = 0;
                 }
                 else
                 {
-                    finscore += TempScore[k];
+
+                    if(count==1 && TempScore[k]+TempScore[k+1]==10)
+                    {
+                        finscore += TempScore[k];
+                        finscore += TempScore[k + 1];
+                        finscore += TempScore[k + 2];
+                        count = 0;
+                    }
+                    else
+                    {
+                        finscore += TempScore[k];
+                    }
+
+
+                    if (count == 0)
+                    {
+                        count += 1;
+                    }
+                    else
+                    {
+                        count = 0;
+                    }
                 }
                
             }
