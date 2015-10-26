@@ -20,5 +20,15 @@ namespace bowling
             }
             Assert.That(g.GetFinalScore(), Is.EqualTo(0));
         }
+        [Test]
+        public void FirstBall()
+        {
+            Game g = new Game();
+            g.SetPins(5);
+            g.SetPins(4);
+            Assert.That(g.GetFinalScore(), Is.EqualTo(9));
+        }
+
     }
 }
+

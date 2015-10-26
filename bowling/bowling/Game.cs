@@ -7,14 +7,18 @@ namespace bowling
 {
     class Game
     {
-        internal void SetPins(int p)
+        int[] TempScore = new int[20];
+        int index = 0;
+        public void SetPins(int p)
         {
-            throw new NotImplementedException();
+            TempScore[index] = p;
+            index += 1;
         }
 
-        internal int GetFinalScore()
+
+        public int GetFinalScore()
         {
-            throw new NotImplementedException();
+            return TempScore[0] + TempScore[1];
         }
     }
 }
